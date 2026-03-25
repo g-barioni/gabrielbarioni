@@ -624,7 +624,10 @@ body::after {
 @media (hover: none) and (pointer: coarse), (max-width: 768px) {
     .cursor,
     #cursor,
-    .custom-cursor {
+    .custom-cursor,
+    body::after {
         display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
     }
 }

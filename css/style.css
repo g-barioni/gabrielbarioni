@@ -619,3 +619,12 @@ body::after {
   .feed { padding: 0 8px 60px; }
   .modal-inner { padding: 72px 16px 80px; }
 }
+
+/* Esconde o cursor customizado em telas de celular (touch) */
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+    .cursor,
+    #cursor,
+    .custom-cursor {
+        display: none !important;
+    }
+}

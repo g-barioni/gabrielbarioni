@@ -1,113 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfólio de Gabriel Barioni — Desenvolvedor Front-end especializado em HTML, CSS e JavaScript, com projetos acessíveis e SEO avançado." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabriel Barioni</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-  <!-- SEO & Open Graph -->
-  <meta property="og:title" content="Gabriel Barioni | Desenvolvedor Front-end" />
-  <meta property="og:description" content="Portfólio profissional de Gabriel Barioni, com skills em HTML, CSS e JavaScript, acessibilidade e SEO avançado." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gabrielbarioni.com" />
-  <meta property="og:image" content="https://gabrielbarioni.com/assets/img/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <button
-        id="menu-toggle"
-        class="menu-toggle"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-        aria-label="Abrir menu"
-      >
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
 
-      <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Menu principal">
-        <ul>
-          <li><a href="#skills" lang="en">Skills</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/gabrielbarioni"
-              target="_blank"
-              rel="noopener"
-              lang="en"
-            >LinkedIn</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <!-- NAV -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">▲</div>
+      <span class="logo-text">GABRIEL<br>BARIONI</span>
+    </a>
+    <button class="burger" id="burgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>Gabriel Barioni</h1>
-        <p class="lead"><span lang="en">Front-end Developer</span> — <span lang="en">HTML</span> • <span lang="en">CSS</span> • <span lang="en">JavaScript</span></p>
-        <div class="hero-actions">
-          <a
-            class="btn btn-primary"
-            href="https://www.linkedin.com/in/gabrielbarioni"
-            target="_blank"
-            rel="noopener"
-            lang="en"
-          >LinkedIn</a>
+  <!-- OVERLAY MENU -->
+  <nav class="overlay-menu" id="overlayMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <ul>
+      <li><a href="index.html" class="nav-link active">Feed</a></li>
+      <li><a href="pages/sobre.html" class="nav-link">Sobre</a></li>
+      <li><a href="pages/contato.html" class="nav-link">Contato</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a href="https://gabrielbarioni.com" target="_blank">gabrielbarioni.com</a>
+    </div>
+  </nav>
+  <div class="overlay-bg" id="overlayBg"></div>
+
+  <!-- FEED HERO -->
+  <section class="feed-hero">
+    <p class="feed-label">✦ pensamentos em frequência</p>
+    <h1 class="feed-title">O que eleva,<br><em>transforma.</em></h1>
+  </section>
+
+  <!-- FEED GRID -->
+  <main class="feed" id="feed">
+
+    <article class="card" data-slug="frequencia" onclick="openPost('frequencia')">
+      <div class="card-img-wrap">
+        <img src="assets/post1.jpg" alt="Frequência" onerror="this.style.display='none'" />
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
+          <span class="placeholder-icon">♡</span>
+        </div>
+        <div class="card-category">Consciência</div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">O Único Sentimento que Eleva Nossa Frequência.</h2>
+        <p class="card-intro">Existe uma força invisível que opera dentro de cada um de nós. Ela não precisa de permissão.</p>
+        <div class="card-meta">
+          <span class="card-date">MAR 2025</span>
+          <span class="card-read">4 min leitura</span>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="skills-title" lang="en">Skills</h2>
-        <div class="skills-grid" role="list">
-          <article class="skill" role="listitem">
-            <h3 lang="en">HTML</h3>
-            <div class="skill-bar" aria-hidden="true"><span style="--pct:95%"></span></div>
-            <p>Semântico, acessibilidade e SEO avançado.</p>
-          </article>
-
-          <article class="skill" role="listitem">
-            <h3 lang="en">CSS</h3>
-            <div class="skill-bar" aria-hidden="true"><span style="--pct:90%"></span></div>
-            <p>Flexbox, Grid, animações e responsividade.</p>
-          </article>
-
-          <article class="skill" role="listitem">
-            <h3 lang="en">JavaScript</h3>
-            <div class="skill-bar" aria-hidden="true"><span style="--pct:85%"></span></div>
-            <p>DOM, eventos e interatividade com JS puro.</p>
-          </article>
+    <article class="card card--wide" data-slug="presenca" onclick="openPost('presenca')">
+      <div class="card-img-wrap">
+        <img src="assets/post2.jpg" alt="Presença" onerror="this.style.display='none'" />
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #111 0%, #2a1a0a 100%);">
+          <span class="placeholder-icon">◎</span>
+        </div>
+        <div class="card-category">Presença</div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Você Está Aqui. Isso É Suficiente.</h2>
+        <p class="card-intro">A modernidade nos vende ausência como produtividade. O presente é o único lugar onde a vida acontece.</p>
+        <div class="card-meta">
+          <span class="card-date">FEV 2025</span>
+          <span class="card-read">6 min leitura</span>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section id="sobre" class="section">
-      <div class="container">
-        <h2>Sobre</h2>
-        <p>Sou Gabriel Barioni, desenvolvedor <span lang="en">Front-end</span>. Gosto de interfaces limpas, performáticas e acessíveis.</p>
+    <article class="card" data-slug="silencio" onclick="openPost('silencio')">
+      <div class="card-img-wrap">
+        <img src="assets/post3.jpg" alt="Silêncio" onerror="this.style.display='none'" />
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #050510 0%, #0a0a2a 100%);">
+          <span class="placeholder-icon">∿</span>
+        </div>
+        <div class="card-category">Mente</div>
       </div>
-    </section>
+      <div class="card-body">
+        <h2 class="card-title">O Poder que Mora no Silêncio.</h2>
+        <p class="card-intro">Antes de qualquer resposta existe uma pausa. Nessa pausa vive a sua liberdade.</p>
+        <div class="card-meta">
+          <span class="card-date">JAN 2025</span>
+          <span class="card-read">3 min leitura</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-slug="escolha" onclick="openPost('escolha')">
+      <div class="card-img-wrap">
+        <img src="assets/post4.jpg" alt="Escolha" onerror="this.style.display='none'" />
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);">
+          <span class="placeholder-icon">⟡</span>
+        </div>
+        <div class="card-category">Propósito</div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Toda Escolha é uma Declaração de Quem Você É.</h2>
+        <p class="card-intro">Não existe decisão pequena. Cada passo carrega o peso de uma intenção.</p>
+        <div class="card-meta">
+          <span class="card-date">DEZ 2024</span>
+          <span class="card-read">5 min leitura</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card--featured" data-slug="amor" onclick="openPost('amor')">
+      <div class="card-img-wrap">
+        <img src="assets/post5.jpg" alt="Amor" onerror="this.style.display='none'" />
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #100510 0%, #200520 100%);">
+          <span class="placeholder-icon">❋</span>
+        </div>
+        <div class="card-category">Amor</div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Amar Sem Condição Não É Fraqueza. É a Maior Coragem.</h2>
+        <p class="card-intro">O amor incondicional assusta porque ele exige que a gente se despoje de toda armadura.</p>
+        <div class="card-meta">
+          <span class="card-date">NOV 2024</span>
+          <span class="card-read">7 min leitura</span>
+        </div>
+      </div>
+    </article>
+
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© 2025 Gabriel Barioni</p>
+  <!-- POST MODAL -->
+  <div class="post-modal" id="postModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="modalClose">←</button>
+      <div class="modal-content" id="modalContent"></div>
     </div>
-  </footer>
+  </div>
 
-  <script src="script.js" defer></script>
+  <script src="js/posts.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Gabriel Barioni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">▲</div>
+      <span class="logo-text">GABRIEL<br>BARIONI</span>
+    </a>
+    <button class="burger" id="burgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="overlay-menu" id="overlayMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <ul>
+      <li><a href="../index.html" class="nav-link">Feed</a></li>
+      <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+      <li><a href="contato.html" class="nav-link active">Contato</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a href="https://gabrielbarioni.com" target="_blank">gabrielbarioni.com</a>
+    </div>
+  </nav>
+  <div class="overlay-bg" id="overlayBg"></div>
+
+  <main class="page-wrap">
+    <span class="page-label">✦ contato</span>
+    <h1 class="page-title">Vamos<br>conversar.</h1>
+
+    <a href="https://instagram.com/gabrielbarioni" target="_blank" class="contact-item">
+      <span class="contact-icon">◈</span>
+      <div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">@gabrielbarioni</div>
+      </div>
+    </a>
+
+    <a href="https://gabrielbarioni.com" target="_blank" class="contact-item">
+      <span class="contact-icon">◎</span>
+      <div>
+        <div class="contact-label">Site</div>
+        <div class="contact-value">gabrielbarioni.com</div>
+      </div>
+    </a>
+
+    <a href="mailto:oi@gabrielbarioni.com" class="contact-item">
+      <span class="contact-icon">◻</span>
+      <div>
+        <div class="contact-label">E-mail</div>
+        <div class="contact-value">oi@gabrielbarioni.com</div>
+      </div>
+    </a>
+  </main>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const overlayMenu = document.getElementById('overlayMenu');
+    const overlayBg = document.getElementById('overlayBg');
+    const closeMenu = document.getElementById('closeMenu');
+    burgerBtn.addEventListener('click', () => { overlayMenu.classList.add('open'); overlayBg.classList.add('show'); });
+    closeMenu.addEventListener('click', () => { overlayMenu.classList.remove('open'); overlayBg.classList.remove('show'); });
+    overlayBg.addEventListener('click', () => { overlayMenu.classList.remove('open'); overlayBg.classList.remove('show'); });
+    document.addEventListener('mousemove', (e) => {
+      document.documentElement.style.setProperty('--cx', e.clientX + 'px');
+      document.documentElement.style.setProperty('--cy', e.clientY + 'px');
+    });
+  </script>
+</body>
+</html>
